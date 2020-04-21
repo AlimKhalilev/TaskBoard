@@ -1,9 +1,18 @@
 // === Header [ Стили для навбара, используемые на всех страницах ] ===
 
 .section-header {
+    height: 3.5rem;
+    background-color: $color_checked;
     
     .section-inner {
-        
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-title {
+
     }
 
 }

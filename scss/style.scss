@@ -10,10 +10,101 @@
 
 // === / SectionName ===
 
-.section-name {
-    
+.section-main {
+    margin: 2rem 0;
+
     .section-inner {
 
+    }
+
+    &-cards {
+        display: flex;
+
+        &-card {
+            padding: 2rem;
+            background-color: $color_bg_card;
+            max-width: 350px;
+
+            h3 {
+                font-size: 1.3rem;
+                padding-bottom: 0.4rem;
+                border-bottom: 0.15rem solid $color_main;
+                margin-bottom: 1rem;
+            }
+
+            &-container {
+
+                &-items {
+                    
+                    &-item {
+                        display: flex;
+                        cursor: pointer;
+    
+                        input[type="checkbox"] {
+                            -webkit-appearance: none;
+                            width: 0;
+                            height: 0;
+                            visibility: hidden;
+                        }
+    
+                        input[type="checkbox"]:checked ~ span::before {
+                            border-top: none;
+                            border-right: none;
+                            height: 0.7rem;
+                            width: 1.2rem;
+                            transform: rotate(-45deg);
+                            top: calc(50% - 0.7rem + 0.1rem);
+                        }
+    
+                        input[type="checkbox"]:checked ~ span {
+                            color: $color_checked;
+                            text-decoration: line-through;
+                        }
+    
+                        // input[type="checkbox"]:checked ~ span::after {
+                        //     transform: translateY(-50%) scaleX(1);
+                        // }
+    
+                        span {
+                            position: relative;
+                            font-size: 0.9rem;
+                            line-height: 1.5;
+                            padding-left: calc(1.2rem + 0.8rem);
+                            transition: 0.3s ease-in-out;
+    
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                height: 1.2rem;
+                                width: 1.2rem;
+                                border: 0.1rem solid $color_main;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                transition: 0.3s ease-in-out;
+                            }
+    
+                            // &::after {
+                            //     content: '';
+                            //     position: absolute;
+                            //     left: calc(1.2rem + 0.8rem);
+                            //     width: calc(100% - (1.2rem + 0.8rem));
+                            //     height: 0.1rem;
+                            //     background-color: $color_main;
+                            //     transform: translateY(-50%) scaleX(0);
+                            //     transform-origin: right;
+                            //     transition: 0.3s;
+                            //     top: 50%;
+                            // }
+                        }
+    
+                        &:not(:last-child) {
+                            margin-bottom: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
