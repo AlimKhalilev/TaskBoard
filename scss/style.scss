@@ -18,44 +18,108 @@
     }
 
     &-pane {
-        min-width: 300px;
         margin-right: 2rem;
         background-color: $color_bg_card;
         min-height: calc(100vh - (2rem * 2) - 3.5rem);
         padding: 1.5rem;
+        position: fixed;
         @include boxShadow;
+        min-width: 300px;
 
-        .item {
-            background-color: $color_checked;
-            transition: 0.3s ease-in-out;
-            padding: 1rem;
-            cursor: pointer;
-            @include boxShadowItem;
+        position: sticky;
+        top: 2rem;
+        height: calc(100vh - 4rem);
 
+        display: flex;
+        flex-direction: column;
+
+        .account {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
 
-            &:not(:last-child) {
-                margin-bottom: 1.2rem;
-            }
+            &-name {
+                display: flex;
+                align-items: center;
+                transition: 0.3s ease-in-out;
+                cursor: pointer;
 
-            &:hover {
-                transform: translate(-0.25rem, -0.25rem);
-                @include boxShadowItemHover;
-            }
-
-            &-text {
-
-            }
-
-            &-stat {
-                font-size: 0.85rem;
-
-                &.completed {
-                    text-decoration: line-through;
-                    color: $color_success;
+                span {
+                    margin-left: 0.5rem;
                 }
+
+                &:hover {
+                    color: $color_success;
+
+                    svg {
+                        fill: $color_success;
+                    }
+                }
+            }
+
+            &-links {
+                display: flex;
+
+                svg {    
+                    &:hover {
+                        fill: $color_success;
+                    }
+                }
+            }
+
+            svg {
+                fill: $color_main;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+                width: 20px;
+                height: 20px;
+            }
+
+            
+        }
+
+        .items {
+            margin: 1.5rem 0 auto 0;
+
+            &-item {
+                background-color: $color_checked;
+                transition: 0.3s ease-in-out;
+                padding: 1rem;
+                cursor: pointer;
+                @include boxShadowItem;
+    
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+    
+                &:not(:last-child) {
+                    margin-bottom: 1.2rem;
+                }
+    
+                &:hover {
+                    transform: translate(-0.25rem, -0.25rem);
+                    @include boxShadowItemHover;
+                }
+    
+                &-text {
+    
+                }
+    
+                &-stat {
+                    font-size: 0.85rem;
+    
+                    &.completed {
+                        text-decoration: line-through;
+                        color: $color_success;
+                    }
+                }
+            }
+        }
+
+        .author {
+            h4 {
+                text-align: center;
+                color: $color_success;
             }
         }
     }
