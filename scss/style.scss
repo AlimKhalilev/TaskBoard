@@ -11,19 +11,37 @@
 // === / SectionName ===
 
 .section-main {
-    margin: 2rem 0;
+    margin: 2rem;
 
     .section-inner {
+        display: flex;
+    }
 
+    &-pane {
+        min-width: 300px;
+        margin-right: 2rem;
+        background-color: $color_checked;
+        min-height: calc(100vh - (2rem * 2) - 3.5rem);
     }
 
     &-cards {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-content: flex-start;
+        gap: 2rem;
 
-        &-card {
+        .card {
             padding: 2rem;
             background-color: $color_bg_card;
-            max-width: 350px;
+            box-shadow: 0.625rem 0.625rem 0.3rem 0px rgba(0,0,0,0.4);
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($color_bg_card, 2);
+                box-shadow: 1rem 1rem 0.3rem 0px rgba(0,0,0,0.4);
+                transform: translate(-0.25rem, -0.25rem);
+            }
 
             h3 {
                 font-size: 1.3rem;
@@ -83,19 +101,6 @@
                                 transform: translateY(-50%);
                                 transition: 0.3s ease-in-out;
                             }
-    
-                            // &::after {
-                            //     content: '';
-                            //     position: absolute;
-                            //     left: calc(1.2rem + 0.8rem);
-                            //     width: calc(100% - (1.2rem + 0.8rem));
-                            //     height: 0.1rem;
-                            //     background-color: $color_main;
-                            //     transform: translateY(-50%) scaleX(0);
-                            //     transform-origin: right;
-                            //     transition: 0.3s;
-                            //     top: 50%;
-                            // }
                         }
     
                         &:not(:last-child) {
