@@ -7,4 +7,20 @@ body {
     color: #fff;
 }
 
+@mixin boxShadow {
+    box-shadow: 0.625rem 0.625rem 0.3rem 0px rgba(0,0,0,0.4);
+}
+
+@mixin boxShadowHover {
+    box-shadow: 1rem 1rem 0.3rem 0px rgba(0,0,0,0.4);
+}
+
+@mixin boxShadowItem {
+    box-shadow: 0.625rem 0.625rem 0.625rem -0.25rem rgba(15,15,15,1);
+}
+
+@mixin boxShadowItemHover {
+    box-shadow: 1rem 1rem 0.625rem -0.35rem rgba(15,15,15,1);
+}
+
 // === / Mixins ===
