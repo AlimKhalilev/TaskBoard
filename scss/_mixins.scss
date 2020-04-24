@@ -7,6 +7,14 @@ body {
     color: #fff;
 }
 
+svg {
+    fill: $color_main;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 20px;
+    height: 20px;
+}
+
 @mixin boxShadow {
     box-shadow: 0.625rem 0.625rem 0.3rem 0px rgba(0,0,0,0.4);
 }
