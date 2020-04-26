@@ -1,18 +1,22 @@
 // === Mixins [ Шаблоны классов стилей, используемых на всех страницах ]===
 
-body {
+html, body {
     font-family: 'Comfortaa', cursive;
     font-size: 16px;
     background-color: $color_bg_main;
     color: #fff;
+
+    @media ($media_xl) {
+        font-size: 14px;
+    }
 }
 
 svg {
     fill: $color_main;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 @mixin boxShadow {
